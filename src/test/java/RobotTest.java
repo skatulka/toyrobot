@@ -25,18 +25,11 @@ public class RobotTest {
     public static void testPlace(int x, int y, Direction direction, String expectedReport){
         Robot robot = new Robot();
         Table table = new Table(5, 5, robot);
-        Assert.assertTrue(robot.getX() == 0);
-        Assert.assertTrue(robot.getY() == 0);
-        Assert.assertNull(robot.getFacing());
-        Assert.assertNull(robot.getTable());
 
-        // Verify that these do not throw errors or change the robot's values
+        // Verify that these do not throw errors before robot is placed
         robot.move();
         robot.leftTurn();
         robot.rightTurn();
-
-        String initialReport = robot.report();
-        Assert.assertEquals(initialReport, EXPECTED_INITIAL_REPORT);
 
         // Place the robot on the table and verify report updates values
         robot.place(table, x, y, direction);

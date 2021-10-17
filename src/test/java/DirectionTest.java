@@ -16,7 +16,6 @@ public class DirectionTest {
 
     @Test(dataProvider = "leftTurnTesting")
     public static void testLeftTurn(Direction starting, Direction expected){
-        Assert.assertNotNull(starting);
         Direction actual = starting.left();
         Assert.assertEquals(actual, expected);
     }
@@ -33,7 +32,6 @@ public class DirectionTest {
 
     @Test(dataProvider = "rightTurnTesting")
     public static void testRightTurn(Direction starting, Direction expected){
-        Assert.assertNotNull(starting);
         Direction actual = starting.right();
         Assert.assertEquals(actual, expected);
     }
@@ -56,7 +54,6 @@ public class DirectionTest {
 
     @Test(dataProvider = "moveTesting")
     public static void moveTesting(int startX, int startY, Direction direction, int expectedX, int expectedY){
-        Assert.assertNotNull(direction);
         int actualX = startX + direction.getX();
         int actualY = startY + direction.getY();
         Assert.assertEquals(actualX, expectedX, "Move along x axis was incorrect!");
